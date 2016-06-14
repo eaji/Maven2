@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.exist.ActTwo</groupId>
+  <artifactId>myapp</artifactId>
+  <version>${snapshot.version}</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>app</module>
+    <module>service</module>
+    <module>model</module>
+  </modules>
+
+  <properties>
+    <snapshot.version>1.0-SNAPSHOT</snapshot.version>
+    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+    <java.version>1.8</java.version>
+    <commons-lang.version>2.3</commons-lang.version>
+  </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin.version}</version>
+            <configuration>
+               <source>${java.version}</source>
+               <target>${java.version}</target>
+            </configuration>
+         </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <dependencyManagement>
+    <dependencies>	
+      <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>${commons-lang.version}</version>
+      </dependency>
+	  <dependency>
+        <groupId>com.exist.ActTwo</groupId>
+        <artifactId>app</artifactId>
+        <version>${snapshot.version}</version>
+	  </dependency>
+      <dependency>
+        <groupId>com.exist.ActTwo</groupId>
+        <artifactId>service</artifactId>
+        <version>${snapshot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.exist.ActTwo</groupId>
+        <artifactId>model</artifactId>
+        <version>${snapshot.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>

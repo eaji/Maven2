@@ -1,0 +1,4 @@
+kkk=kkk	ccc=ddd	
+mno=pqr	stu=vwx	
+789=000	123=456	
+xxx=yyy	aaa=bbb
